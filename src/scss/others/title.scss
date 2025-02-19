@@ -1,0 +1,18 @@
+.title {
+   padding-top: 48px;
+   padding-bottom: 88px;
+   font-weight: 500;
+   font-size: 88px;
+   line-height: 81%;
+   display: flex;
+   justify-content: center;
+
+   &__sell {
+      display: flex;
+      flex-direction: column;
+
+      &>*:last-child {
+         padding-left: 0.5em;
+      }
+   }
+}

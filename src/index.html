@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+   @@include('html/1_head.html',{"title":"Двор и Дом"})
+</head>
+
+
+<body>
+
+   <div class="wrapper">
+
+      @@include('html/2_header.html',{})
+
+      <div class="main">
+
+         @@include('html/Title/Title.html',{})
+         @@include('html/Main-Gallery/Main-Gallery.html',{})
+         @@include('html/About/About.html',{})
+         @@include('html/Portfolio/Portfolio.html',{})
+         @@include('html/Stages/Stages.html',{})
+         @@include('html/Services/Services.html',{})
+
+
+
+
+
+      </div>
+
+      @@include('html/4_footer.html',{})
+
+   </div>
+
+
+   @@include('html/3_scripts.html',{
+   swiper: true,
+   })
+
+
+</body>
+
+</html>

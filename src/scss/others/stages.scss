@@ -1,0 +1,75 @@
+.stages {
+   padding-top: var(--margin-section);
+   padding-bottom: var(--margin-section);
+
+   &__container {}
+
+   &__footer {
+      margin-bottom: 32px;
+      margin-top: 72px;
+      display: flex;
+      justify-content: space-between;
+   }
+
+   &__points {
+      font-size: 16px;
+      color: var(--color-smoky-white-05);
+   }
+
+   &__text {
+      color: var(--color-light-grey);
+      max-width: 968px;
+   }
+
+   &__list {
+      list-style-type: none;
+      counter-reset: item 0;
+
+      li {
+         --padding: 32px;
+         padding-top: var(--padding);
+         padding-bottom: var(--padding);
+         position: relative;
+         border-top: 1px solid var(--color-white-02);
+         font-size: 20px;
+         line-height: 120%;
+         color: var(--color-light-grey-08);
+         min-height: 300px;
+
+         &::after {
+            content: '';
+            position: absolute;
+            top: calc(var(--padding) + 0.5em);
+            left: 0;
+            width: 10px;
+            height: 10px;
+            border: 2px solid var(--color-smoky-white-05);
+            transform: translateY(-50%) rotate(45deg);
+         }
+
+         &::before {
+            content: "0" counter(item);
+            counter-increment: item;
+            position: absolute;
+            top: var(--padding);
+            left: 20px;
+            color: var(--color-light-grey);
+
+         }
+
+         &:nth-child(n + 10) {
+            &::before {
+               content: counter(item);
+               counter-increment: item;
+            }
+         }
+
+         span {
+            padding-left: 32px;
+            margin-left: auto;
+            display: block;
+            max-width: 532px;
+         }
+      }
+   }
+}

@@ -1,0 +1,70 @@
+@use '../assets/variablesSCSS.scss' as *;
+
+.header {
+
+   &__container {}
+
+   &__body {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
+
+   &__logo {
+      padding: 16px 24px;
+
+      img {
+         max-width: 185px;
+      }
+   }
+
+   &__phone {}
+
+   &__actions {
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--color-silver-02);
+      border-radius: 50px;
+   }
+
+   &__order {}
+
+   &__menu {}
+
+   &__menu-button {
+      position: relative;
+      width: var(--size-button);
+      min-width: var(--size-button);
+      height: var(--size-button);
+      background-color: var(--color-white);
+      border-radius: 50px;
+   }
+
+   &__menu-button-line1,
+   &__menu-button-line2,
+   &__menu-button-line3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 1px;
+      background-color: var(--color-black);
+      width: 18px;
+
+   }
+
+   &__menu-button-line1 {
+      transform: translate(-50%, calc(-50% - 5px));
+   }
+
+   &__menu-button-line2 {
+      transform: translate(-50%, calc(-50% + 5px));
+   }
+
+   &__menu-button-line3 {
+      transform: translate(-50%, -50%);
+   }
+}

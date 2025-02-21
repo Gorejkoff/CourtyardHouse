@@ -1,7 +1,6 @@
-.stages {
-   padding-top: var(--margin-section);
-   padding-bottom: var(--margin-section);
+@use '../assets/mixin.scss' as *;
 
+.stages {
    &__container {}
 
    &__footer {
@@ -9,16 +8,32 @@
       margin-top: 72px;
       display: flex;
       justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
    }
 
    &__points {
-      font-size: 16px;
+      font-size: 14px;
       color: var(--color-smoky-white-05);
+
+      @media (min-width:768px) {
+         font-size: 16px;
+      }
    }
 
    &__text {
       color: var(--color-light-grey);
       max-width: 968px;
+      font-size: 16px;
+
+      @media (min-width:768px) {
+         font-size: 24px;
+      }
+
+      @media (min-width:1024px) {
+         font-size: 32px;
+      }
+
    }
 
    &__list {
@@ -26,25 +41,40 @@
       counter-reset: item 0;
 
       li {
-         --padding: 32px;
+         --padding: 24px;
          padding-top: var(--padding);
          padding-bottom: var(--padding);
          position: relative;
          border-top: 1px solid var(--color-white-02);
-         font-size: 20px;
+         font-size: 14px;
          line-height: 120%;
          color: var(--color-light-grey-08);
-         min-height: 300px;
+
+         @include size_adaptive (min-height, 80, 300, 768, 1024);
+
+         @media (min-width:768px) {
+            --padding: 32px;
+            font-size: 20px;
+         }
+
+         @media (min-width:1024px) {
+            min-height: 300px;
+         }
 
          &::after {
             content: '';
             position: absolute;
             top: calc(var(--padding) + 0.5em);
             left: 0;
-            width: 10px;
-            height: 10px;
+            width: 7px;
+            height: 7px;
             border: 2px solid var(--color-smoky-white-05);
             transform: translateY(-50%) rotate(45deg);
+
+            @media (min-width:768px) {
+               width: 10px;
+               height: 10px;
+            }
          }
 
          &::before {
@@ -54,6 +84,11 @@
             top: var(--padding);
             left: 20px;
             color: var(--color-light-grey);
+            font-size: 14px;
+
+            @media (min-width:768px) {
+               font-size: 16px;
+            }
 
          }
 
@@ -65,10 +100,10 @@
          }
 
          span {
-            padding-left: 32px;
+            padding-left: 88px;
             margin-left: auto;
             display: block;
-            max-width: 532px;
+            max-width: 588px;
          }
       }
    }

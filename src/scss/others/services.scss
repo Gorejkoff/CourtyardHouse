@@ -1,0 +1,110 @@
+@use '../assets/mixin.scss' as *;
+@use '../assets/variablesSCSS.scss' as *;
+
+.services {
+
+   &__container {}
+
+   &__title {
+      margin-bottom: 40px;
+   }
+
+   &__tabs {
+      margin-left: auto;
+      max-width: 888px;
+
+      @media (min-width:1272px) {
+         margin-right: 160px;
+      }
+
+      @include size_adaptive(margin-right, 0, 160, 952, 1272)
+   }
+
+   &__tabs-body {
+      border-bottom: 1px solid var(--color-black-02);
+   }
+
+   &__tabs-button {
+      padding-top: 16px;
+      padding-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 500;
+      font-size: 22px;
+      width: 100%;
+
+      @media (min-width:768px) {
+         padding-top: 20px;
+         padding-bottom: 24px;
+         font-size: 24px;
+      }
+   }
+
+   &__tabs-cross {
+      position: relative;
+      --size: 24px;
+      width: var(--size);
+      min-width: var(--size);
+      height: var(--size);
+
+      @media (min-width:768px) {
+         --size: 32px;
+      }
+
+      &::after,
+      &::before {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         width: calc(var(--size) * 0.666);
+         height: 1.5px;
+         background-color: var(--color-black);
+      }
+
+      &::after {
+         transform: translate(-50%, -50%) rotate(90deg);
+         transition: transform $tr-time;
+      }
+
+      &::before {
+         transform: translate(-50%, -50%);
+      }
+   }
+
+   &__tabs-content {
+      padding-bottom: 24px;
+      margin-left: auto;
+      max-width: 600px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 150%;
+      letter-spacing: 0.02em;
+
+      &>*:not(:last-child) {
+         margin-bottom: 20px;
+      }
+
+      @media (min-width:768px) {
+         font-size: 16px;
+
+      }
+   }
+
+   &__tabs-title {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+
+      @media (min-width:768px) {
+         font-size: 20px;
+      }
+   }
+}
+
+.js-tabs-open .services__tabs-cross {
+   &::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+   }
+}

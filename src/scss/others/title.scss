@@ -1,11 +1,19 @@
+@use '../assets/mixin.scss' as *;
+
 .title {
    padding-top: 48px;
    padding-bottom: 88px;
    font-weight: 500;
-   font-size: 88px;
+   font-size: 36px;
    line-height: 81%;
    display: flex;
    justify-content: center;
+
+   @include size_adaptive (font-size, 36, 88, 375, 1024);
+
+   @media (min-width:1024px) {
+      font-size: 88px;
+   }
 
    &__sell {
       display: flex;

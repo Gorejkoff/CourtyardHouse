@@ -41,6 +41,8 @@ body {
 }
 
 .black-section {
+   padding-top: var(--margin-section);
+   padding-bottom: var(--margin-section);
    color: var(--color-white);
    background-color: var(--color-black);
 }
@@ -185,17 +187,17 @@ body {
 }
 
 
-// .js-tabs-shell {
-//    will-change: height;
-//    transform: translateZ(0);
-//    height: 0;
-//    overflow: hidden;
-//    transition: height $tr-time-l $bezier;
-// }
+.js-tabs-shell {
+   will-change: height;
+   transform: translateZ(0);
+   height: 0;
+   overflow: hidden;
+   transition: height $tr-time-l $bezier;
+}
 
-// .js-tabs-toggle {
-//    cursor: pointer;
-// }
+.js-tabs-toggle {
+   cursor: pointer;
+}
 
 // /* указатель количества, абсолютное позиционирование */
 // [data-icon-quantity] {
@@ -233,17 +235,42 @@ body {
 // }
 
 .button {
-   font-weight: 400;
-   font-size: 16px;
-   color: var(--color-white);
+   padding: 12px 24px;
    display: inline-flex;
-   padding: 16px 24px;
-
+   align-items: center;
+   justify-content: center;
+   min-height: 48px;
+   width: 100%;
+   transition: background-color $tr-time;
    background-color: var(--color-black);
    border-radius: 50px;
-   transition: background-color $tr-time;
+   font-weight: 400;
+   font-size: 14px;
+   color: var(--color-white);
+
+   @media (min-width:768px) {
+      width: auto;
+      font-size: 16px;
+      min-height: 56px;
+   }
 
    &:hover {
       background-color: var(--color-signal-black);
+   }
+}
+
+.button-transparent {
+   padding: 14px 24px;
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 40px;
+   font-size: 14px;
+   border: 1px solid rgba(217, 217, 217, 0.2);
+   border-radius: 40px;
+
+   @media (min-width:768px) {
+      font-size: 16px;
+      min-height: 48px;
    }
 }

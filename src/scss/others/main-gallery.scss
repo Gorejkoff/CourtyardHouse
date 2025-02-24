@@ -1,10 +1,12 @@
 .main-gallery {
 
    &__feader {
+      position: relative;
       margin-bottom: 32px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      gap: 58px;
    }
 
    &__text {
@@ -12,16 +14,43 @@
       color: var(--color-black-08);
    }
 
-   &__buttons {}
+   &__buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+   }
 
    &__swiper {
       overflow: hidden;
 
    }
 
+   &__pagination {
+      font-size: 14px;
+      color: var(--color-black-02);
+      white-space: nowrap;
+
+      @media (min-width:1024px) {
+         font-size: 16px;
+         position: absolute;
+         top: -114px;
+         right: 0;
+      }
+
+      .swiper-pagination-current {
+         color: var(--color-black);
+
+      }
+   }
+
    &__slide {
       position: relative;
-      padding-bottom: 43.34%;
+      padding-bottom: 79%;
+
+      @media (min-width:768px) {
+         padding-bottom: 43.34%;
+
+      }
 
       img {
          position: absolute;

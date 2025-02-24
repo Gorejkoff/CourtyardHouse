@@ -110,7 +110,11 @@
       display: inline-flex;
    }
 
-   // time {
-   //    margin-bottom: 4px;
-   // }
+   .title-section {
+      @media (min-width:1024px) {
+         p {
+            margin-left: 120px;
+         }
+      }
+   }
 }

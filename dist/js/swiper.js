@@ -6185,24 +6185,55 @@ if (document.querySelector('.main-gallery__swiper')) {
          enabled: true,
          onlyInViewport: true,
       },
-      loop: true,
-      spaceBetween: 10,
+      // loop: true,
+      spaceBetween: 12,
       speed: 300,
       slidesPerView: 1,
       grabCursor: true,
 
       navigation: {
-         prevEl: ".main-gallery__button-next",
-         nextEl: ".main-gallery__button-prev",
+         prevEl: ".main-gallery__button-prev",
+         nextEl: ".main-gallery__button-next",
       },
-      // pagination: {
-      //    el: '.pagination__body',
-      //    type: 'bullets',
-      //    clickable: true,
-      // },
+      pagination: {
+         el: '.main-gallery__pagination',
+         type: 'fraction',
+         clickable: true,
+      },
    });
 }
 
+
+if (document.querySelector('.benefit__swiper')) {
+   const swiper = new Swiper('.benefit__swiper', {
+      keyboard: {
+         enabled: true,
+         onlyInViewport: true,
+      },
+      // loop: true,
+      spaceBetween: 0,
+      speed: 300,
+      slidesPerView: 1.5,
+      grabCursor: true,
+      breakpoints: {
+         1200: {
+            slidesPerView: 4,
+         },
+         768: {
+            slidesPerView: 2.5,
+         }
+      },
+      // navigation: {
+      //    prevEl: ".main-gallery__button-prev",
+      //    nextEl: ".main-gallery__button-next",
+      // },
+      pagination: {
+         el: '.benefit__pagination',
+         type: 'bullets',
+         clickable: true,
+      },
+   });
+}
 
 
 

@@ -21,7 +21,11 @@ const MIN1024 = window.matchMedia('(min-width: 1024px)');
 const MIN768 = window.matchMedia('(min-width: 768px)');
 
 // variables
-const HEADER = document.getElementById('header');
+// const HEADER = document.getElementById('header');
+const HEADER_BODY = document.getElementById('header-body');
+const HEADER_ACTION = document.getElementById('header-actions');
+const HEADER_POP_UP = document.getElementById('header-pop-up');
+const HEADER_POP_UP_INNER = document.getElementById('header-pop-up-inner');
 
 
 
@@ -39,25 +43,45 @@ function throttle(callee, timeout) {
 
 
 
-/* запись переменных высоты элементов */
-// function addHeightVariable() {
-//    if (typeof HEADER !== "undefined") {
-//       document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`)
-//    }
-// }
-// addHeightVariable();
+/* динамические переменные */
+function addHeightVariable() {
+   // if (typeof HEADER !== "undefined") {
+   //    document.body.style.setProperty('--height-header', `${HEADER.offsetHeight}px`);
+   // }
+   if (typeof HEADER_ACTION !== "undefined") {
+      HEADER_ACTION.style.setProperty('--offset-right', `${HEADER_ACTION.offsetWidth}px`);
+   }
+}
+addHeightVariable();
 
 
 // ** ======================= RESIZE ======================  ** //
 window.addEventListener('resize', () => {
-   //  addHeightVariable();
+   addHeightVariable();
+   setWidthHeaderMenu();
 })
 
 
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
-
+   if (event.target.closest('.js-open-header-menu')) { openHeaderMenu() };
 })
+
+function openHeaderMenu() {
+   document.body.classList.toggle('is-open-header-menu');
+   setWidthHeaderMenu();
+}
+function setWidthHeaderMenu() {
+   if (document.body.classList.contains('is-open-header-menu')) {
+      let width = HEADER_POP_UP_INNER.offsetWidth;
+      let bodyWidth = HEADER_BODY.offsetWidth;
+      HEADER_POP_UP.style.setProperty('--width-pop-up', `${bodyWidth > width ? width : bodyWidth}px`);
+      return;
+   }
+}
+function closeHeaderMenu() {
+   document.body.classList.remove('is-open-header-menu')
+}
 
 
 // перемещение блоков при адаптиве

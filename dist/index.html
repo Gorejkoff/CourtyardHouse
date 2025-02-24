@@ -6,7 +6,7 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Описание сайта">
-<link rel="stylesheet" href="css/style.css?_v=20250221225353">
+<link rel="stylesheet" href="css/style.css?_v=20250224103814">
 </head>
 
 
@@ -17,7 +17,7 @@
 
       <header id="header" class="header">
    <div class="header__container">
-      <div class="header__body">
+      <div id="header-body" class="header__body">
 
          <a href="index.html" class="header__logo">
             <img src="./img/svg/logo-black.svg" alt="Логотип Двор и Дом">
@@ -25,16 +25,25 @@
 
          <a href="tel:+7 (999) 999-00-99" class="header__phone">+7 (999) 999-00-99</a>
 
-         <div class="header__actions">
+         <div id="header-actions" class="header__actions">
             <div class="header__order">
                <button class="button" type="button">Заказать проект</button>
             </div>
             <div class="header__menu">
-               <button class="header__menu-button" type="button" aria-label="открыть меню">
+               <button class="header__menu-button js-open-header-menu" type="button" aria-label="открыть меню">
                   <span class="header__menu-button-line1"></span>
                   <span class="header__menu-button-line2"></span>
                   <span class="header__menu-button-line3"></span>
                </button>
+            </div>
+            <div id="header-pop-up" class="header__menu-pop-up">
+               <ol id="header-pop-up-inner">
+                  <li><a href="404.html">Ландшафтный дизайн</a></li>
+                  <li><a href="404.html">Портфолио</a></li>
+                  <li><a href="404.html">Этапы работы</a></li>
+                  <li><a href="404.html">Услуги</a></li>
+                  <li><a href="404.html">Для строителей</a></li>
+               </ol>
             </div>
          </div>
 
@@ -404,9 +413,9 @@
    </div>
 
 
-   <script defer src='./js/app.js?_v=20250221225353'></script>
+   <script defer src='./js/app.js?_v=20250224103814'></script>
 
-<script defer src='./js/swiper.js?_v=20250221225353'></script>
+<script defer src='./js/swiper.js?_v=20250224103814'></script>
 
 
 

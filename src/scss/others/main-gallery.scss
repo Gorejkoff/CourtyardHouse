@@ -26,20 +26,11 @@
    }
 
    &__pagination {
-      font-size: 14px;
-      color: var(--color-black-02);
-      white-space: nowrap;
 
       @media (min-width:1024px) {
-         font-size: 16px;
          position: absolute;
          top: -114px;
          right: 0;
-      }
-
-      .swiper-pagination-current {
-         color: var(--color-black);
-
       }
    }
 

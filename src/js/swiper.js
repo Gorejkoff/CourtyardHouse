@@ -6236,6 +6236,42 @@ if (document.querySelector('.benefit__swiper')) {
 }
 
 
+if (document.querySelector('.project-swiper__swiper')) {
+   const swiper = new Swiper('.project-swiper__swiper', {
+      keyboard: {
+         enabled: true,
+         onlyInViewport: true,
+      },
+      // loop: true,
+      spaceBetween: 12,
+      speed: 300,
+      slidesPerView: 'auto',
+      grabCursor: true,
+
+      navigation: {
+         prevEl: ".project-swiper__button-prev",
+         nextEl: ".project-swiper__button-next",
+      },
+      pagination: {
+         el: '.project-swiper__pagination-bullets',
+         type: 'bullets',
+         clickable: true,
+      },
+
+      breakpoints: {
+         1024: {
+            spaceBetween: 32,
+            pagination: {
+               el: '.project-swiper__pagination-fraction',
+               type: 'fraction',
+               clickable: true,
+            },
+         },
+
+      },
+   });
+}
+
 
 /* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */
 // if (document.querySelector('.swiper')) {

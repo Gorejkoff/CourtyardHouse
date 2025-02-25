@@ -1,0 +1,63 @@
+@use 'assets/mixin.scss' as *;
+
+.project-swiper {
+   overflow: hidden;
+
+
+   &__container {}
+
+   &__nav {}
+
+   &__swiper {
+      height: 57.6vw;
+
+      @include size_adaptive (height, 200, 512, 375, 1024);
+
+      @media (min-width:1024px) {
+         height: 512px;
+      }
+   }
+
+   &__swiper-wrapper {
+      height: 100%;
+   }
+
+   &__slide {
+
+      img {
+         height: 100%;
+      }
+   }
+
+   &__nav {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      display: none;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 28px;
+
+      @media (min-width:1024px) {
+         display: flex;
+      }
+   }
+
+   &__pagination-fraction {
+      @media (max-width:1023.98px) {
+         display: none;
+      }
+   }
+
+   &__pagination-bullets {
+      @media (min-width:1024px) {
+         display: none;
+      }
+   }
+
+   .swiper-wrapper {
+      .swiper-slide {
+         // flex-shrink: 1;
+         width: auto;
+      }
+   }
+}

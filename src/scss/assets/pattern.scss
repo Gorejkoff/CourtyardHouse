@@ -128,7 +128,6 @@ body {
 
 .margin-section {
    margin-bottom: var(--margin-section, 152px);
-
 }
 
 // .scroll::-webkit-scrollbar {
@@ -216,6 +215,22 @@ body {
    .swiper-pagination-bullet-active {
       width: 32px
    }
+}
+
+.pagination-fraction {
+   font-size: 14px;
+   color: var(--color-black-02);
+   white-space: nowrap;
+
+   @media (min-width:1024px) {
+      font-size: 16px;
+   }
+
+   .swiper-pagination-current {
+      color: var(--color-black);
+
+   }
+
 }
 
 .js-tabs-shell {

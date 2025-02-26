@@ -89,17 +89,12 @@
    }
 
    &__image {
-      height: 480px;
-      // white-space: nowrap;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      overflow: hidden;
+      @media (min-width:1024px) {
+         display: flex;
+      }
 
       img {
-         height: 100%;
-         width: auto;
-         max-width: 100%;
+         width: 100%;
       }
    }
 }

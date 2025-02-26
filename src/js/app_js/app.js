@@ -65,6 +65,13 @@ window.addEventListener('resize', () => {
 // ** ======================= CLICK ======================  ** //
 document.documentElement.addEventListener("click", (event) => {
    if (event.target.closest('.js-open-header-menu')) { openHeaderMenu() };
+
+   if (event.target.closest('.js-image-zoom')) {
+      imageZoom(event.target.closest('.js-image-zoom'));
+   }
+   if (event.target.closest('.js-zoom-close') || (event.target.closest('.image-zoom') && !event.target.closest('.js-zoom-body'))) {
+      removeImageZoom(event)
+   }
 })
 
 function openHeaderMenu() {
@@ -84,9 +91,33 @@ function closeHeaderMenu() {
 }
 
 
-function imageZoom() {
+function imageZoom(element) {
+   let src = element.getAttribute('src');;
 
+   document.body.insertAdjacentHTML(
+      'beforeend',
+      `
+      <div class="modal image-zoom  js-modal-visible">
+      <div class="modal__container">
+         <div class="modal__body js-zoom-body">
+   
+            <button class="modal__close js-zoom-close" type="button">
+               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.33301 1.521L14.6663 14.8543M1.33301 14.8543L14.6663 1.521" stroke="#181818" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+               </svg>
+            </button>
+   
+            <div class="image-zoom__body">
+               <img src="${src}" alt="Схема двора">
+            </div>
+   
+         </div>
+      </div>
+   </div>
+   `
+   )
+}
 
-
-
+function removeImageZoom(event) {
+   event.target.closest('.image-zoom').remove();
 }

@@ -28,6 +28,11 @@
 
    --margin-section: 64px;
    --size-button: 40px;
+   --vh: 100vh;
+
+   @supports (height: 100dvh) {
+      --vh: 100dvh;
+   }
 
    @media (min-width:768px) {
       --margin-section: 100px;

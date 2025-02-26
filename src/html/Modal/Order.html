@@ -1,28 +1,33 @@
-<div id="order" class="modal js-modal-hidden js-modal-close js-modal-visible">
+<div id="order" class="modal js-modal-hidden js-modal-close">
    <div class="modal__container">
       <div class="modal__body js-modal-stop-close">
 
-
          <button class="modal__close js-modal-close" type="button">
-            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <rect width="30" height="30" rx="15" fill="#9DB0BA" />
-               <path d="M22 9.91L20.59 8.5L15 14.09L9.41 8.5L8 9.91L13.59 15.5L8 21.09L9.41 22.5L15 16.91L20.59 22.5L22 21.09L16.41 15.5L22 9.91Z" fill="#ECECEC" />
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1.33301 1.521L14.6663 14.8543M1.33301 14.8543L14.6663 1.521" stroke="#181818" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
          </button>
 
-
          <div class="modal__title">Заказать проектирование сада</div>
 
-         <form action="#" method="post" name="" id="">
+         <form action="#" method="post" name="order" id="order">
             <div class="modal__form-block">
-               <input type="text" name="" id="">
+               <input class="input" type="text" required placeholder="Ваше имя" name="name">
+               <input class="input js-phone" type="text" required placeholder="+7" name="phone">
+               <input class="input" type="text" required placeholder="Район" name="region">
+               <input class="input" type="text" required placeholder="Сколько соток" name="square">
+               <textarea class="textarea" name="info" required id="" placeholder="Дополнительная информация"></textarea>
             </div>
 
-            <label>
-               <input type="checkbox" name="" id="">
+            <label class="checkbox-block">
+               <input class="input-check" required type="checkbox" name="policity" id="policity">
                <span class="checkbox-item"></span>
-               <span class="checkbox-text">Я принимаю политику конфиденциальности и даю согласие на обработку персональных данных.</span>
+               <span class="modal__text">Я принимаю политику конфиденциальности и даю согласие на обработку персональных данных.</span>
             </label>
+
+            <button class="modal__button-submit button" type="submit">Отправить заявку</button>
+
+            <button class="modal__button-submit button js-modal-open" data-modal_open="order-done" type="button">Открыть "Заявка отправлена"</button>
 
          </form>
 

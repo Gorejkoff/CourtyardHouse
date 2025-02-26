@@ -110,6 +110,14 @@ input[type="number"]::-webkit-outer-spin-button {
 	margin: 0px;
 }
 
+input:-internal-autofill-selected,
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+	background-color: transparent !important;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
 a,
 button {
 	color: inherit;

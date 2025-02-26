@@ -87,4 +87,23 @@
          width: 100%;
       }
    }
+
+   &__image {
+      height: 480px;
+      // white-space: nowrap;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      img {
+         height: 100%;
+         width: auto;
+         max-width: 100%;
+      }
+   }
+}
+
+.js-image-zoom {
+   cursor: zoom-in;
 }

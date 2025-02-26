@@ -6,7 +6,7 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Описание сайта">
-<link rel="stylesheet" href="css/style.css?_v=20250225200317">
+<link rel="stylesheet" href="css/style.css?_v=20250226140914">
 </head>
 
 
@@ -27,7 +27,7 @@
 
          <div id="header-actions" class="header__actions">
             <div class="header__order">
-               <button class="button" type="button">Заказать проект</button>
+               <button class="button js-modal-open" type="button" data-modal_open="order">Заказать проект</button>
             </div>
             <div class="header__menu">
                <button class="header__menu-button js-open-header-menu" type="button" aria-label="открыть меню">
@@ -248,7 +248,7 @@
       </div>
 
       <div class="portfolio__button">
-         <button class="button" type="button">Оставить заявку на расчет</button>
+         <button class="button js-modal-open" type="button" data-modal_open="order">Оставить заявку на расчет</button>
       </div>
 
    </div>
@@ -304,7 +304,7 @@
                         <li>свыше 5 000 м2 — 2 800 ₽/м2</li>
                         <li>стоимость альбом не менее — 40 000 ₽</li>
                      </ul>
-                     <button class="button" type="button">Заказать консультацию</button>
+                     <button class="button js-modal-open" type="button" data-modal_open="order">Заказать консультацию</button>
                   </div>
                </div>
             </div>
@@ -395,7 +395,7 @@
                         <li>свыше 5 000 м2 — 2 800 ₽/м2</li>
                         <li>стоимость альбом не менее — 40 000 ₽</li>
                      </ul>
-                     <button class="button" type="button">Заказать консультацию</button>
+                     <button class="button js-modal-open" type="button" data-modal_open="order">Заказать консультацию</button>
                   </div>
                </div>
             </div>
@@ -460,11 +460,65 @@
 
    </div>
 
+   <div id="order" class="modal js-modal-hidden js-modal-close">
+   <div class="modal__container">
+      <div class="modal__body js-modal-stop-close">
 
-   <script defer src='./js/app.js?_v=20250225200317'></script>
+         <button class="modal__close js-modal-close" type="button">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1.33301 1.521L14.6663 14.8543M1.33301 14.8543L14.6663 1.521" stroke="#181818" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+         </button>
 
-<script defer src='./js/swiper.js?_v=20250225200317'></script>
+         <div class="modal__title">Заказать проектирование сада</div>
 
+         <form action="#" method="post" name="order" id="order">
+            <div class="modal__form-block">
+               <input class="input" type="text" required placeholder="Ваше имя" name="name">
+               <input class="input js-phone" type="text" required placeholder="+7" name="phone">
+               <input class="input" type="text" required placeholder="Район" name="region">
+               <input class="input" type="text" required placeholder="Сколько соток" name="square">
+               <textarea class="textarea" name="info" required id="" placeholder="Дополнительная информация"></textarea>
+            </div>
+
+            <label class="checkbox-block">
+               <input class="input-check" required type="checkbox" name="policity" id="policity">
+               <span class="checkbox-item"></span>
+               <span class="modal__text">Я принимаю политику конфиденциальности и даю согласие на обработку персональных данных.</span>
+            </label>
+
+            <button class="modal__button-submit button" type="submit">Отправить заявку</button>
+
+            <button class="modal__button-submit button js-modal-open" data-modal_open="order-done" type="button">Открыть "Заявка отправлена"</button>
+
+         </form>
+
+      </div>
+   </div>
+</div>
+   <div id="order-done" class="modal js-modal-hidden js-modal-close">
+   <div class="modal__container">
+      <div class="modal__body js-modal-stop-close">
+
+         <button class="modal__close js-modal-close" type="button">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1.33301 1.521L14.6663 14.8543M1.33301 14.8543L14.6663 1.521" stroke="#181818" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+         </button>
+
+         <div class="modal__title">Заявка успешно отправлена</div>
+         <span class="modal__text">Наш менеджер свяжется с вами в течение дня.</span>
+         <a href="/" class="modal__button-submit button">Вернуться на сайт</a>
+
+      </div>
+   </div>
+</div>
+
+   <script defer src='./js/app.js?_v=20250226140914'></script>
+
+<script defer src='./js/swiper.js?_v=20250226140914'></script>
+
+<script defer src='./js/mask.js?_v=20250226140914'></script>
 
 
 </body>

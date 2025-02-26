@@ -6,7 +6,7 @@
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 <meta name="viewport" content="width=device-width initial-scale=1.0">
 <meta name="description" content="Описание сайта">
-<link rel="stylesheet" href="css/style.css?_v=20250225200317">
+<link rel="stylesheet" href="css/style.css?_v=20250226140914">
 </head>
 
 
@@ -27,7 +27,7 @@
 
          <div id="header-actions" class="header__actions">
             <div class="header__order">
-               <button class="button" type="button">Заказать проект</button>
+               <button class="button js-modal-open" type="button" data-modal_open="order">Заказать проект</button>
             </div>
             <div class="header__menu">
                <button class="header__menu-button js-open-header-menu" type="button" aria-label="открыть меню">
@@ -98,30 +98,28 @@
             <p>Семья этого дома часто путешествует и ведет активный образ жизни. Имеет питомца – небольшую дружелюбную собаку, с которой весело играть детям и взрослым. Дом и сад для загородного отдыха семьи на выходные, а не постоянного проживания. </p>
             <p>В этом саду существуют уголки с дикими насаждениями, которые не нуждаются в постоянном уходе, напоминая хозяину о детстве, проведенном в окружении лесов и лугов. А небольшой плодовый сад с подстилкой из мавританских трав окружает флером романтики в весенние дни. Так же эти свободные территории неслучайны, они необходимы хозяйке для садовых экспериментов в будущем.</p>
             <p>Сам сад разделен на разные по назначению зеленые комнаты, но свободные по функциям. Каждая зона повторяет традиционные виды отдыха для этой семьи, при этом не привязывает их к определенной тематике. Например, кострище можно перенести к террасе дома или к бане. Солнечные ванны можно принимать на лужайке, но при желании возможен перенос шезлонгов на площадки. Дорожно-тропиночная сеть не такая очевидная, это маршрут, проходящий через площадки. Таким образом, удалось расположить все зоны в шаговой доступности, «сплотить» их, как символ сплоченной и дружной семьи, с возможностью раздельного отдыха для разных поколений. Это экономит не только бюджет на реализацию, но и позволяет сделать участок более просторным визуально.</p>
-
-            <picture>
-               <source srcset="./img/png/project-2.png" type="image/png" media="(min-width:1024px)">
-               <img src="./img/png/project-2m.png" alt="Маленький сад перед домом">
-            </picture>
-
+            <div class="project__image">
+               <img class="js-image-zoom" src="./img/png/project-2-1.png" alt="Схема участка">
+               <img class="js-image-zoom" src="./img/png/project-2-2.png" alt="Схема участка">
+            </div>
             <p>Цветников в этом саду немного, весь сад довольно динамичен. Живые изгороди из кизильника блестящего подчёркивают геометрию и создают объём сада. Они как будто «заземляют» динамичные ажурные цветники и свободные территории, олицетворяя мужскую стойкость, стабильность и надёжность. Растительный ассортимент подобран таким образом, чтобы отсутствие своевременной прополки не сильно бросалось в глаза, а иногда и дополняло природность сада.</p>
          </div>
       </div>
    </div>
 
 </section>
-         <div class="project-swiper margin-section">
-   <div class="project-swiper__container">
+         <div class="project-gallery margin-section">
+   <div class="project-gallery__container">
 
-      <div class="project-swiper__nav">
-         <div class="project-swiper__pagination-fraction pagination-fraction"></div>
+      <div class="project-gallery__nav">
+         <div class="project-gallery__pagination-fraction pagination-fraction"></div>
          <div class="swiper-button__wrapper">
-            <button class="swiper-button__item project-swiper__button-prev" type="button" aria-label="листать назад">
+            <button class="swiper-button__item project-gallery__button-prev" type="button" aria-label="листать назад">
                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M7.7439 0.9225L8.6866 1.8825L3.2359 7.33315L19.3333 7.33315V8.66648L3.2359 8.66648L8.6866 14.1172L7.7439 15.0771L0.666599 7.99981L7.7439 0.9225Z" fill="#181818" />
                </svg>
             </button>
-            <button class="swiper-button__item project-swiper__button-next" type="button" aria-label="листать вперёд">
+            <button class="swiper-button__item project-gallery__button-next" type="button" aria-label="листать вперёд">
                <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12.2561 15.0775L11.3134 14.1175L16.7641 8.66685H0.666748V7.33352H16.7641L11.3134 1.88285L12.2561 0.922852L19.3334 8.00019L12.2561 15.0775Z" fill="#181818" />
                </svg>
@@ -129,31 +127,30 @@
          </div>
       </div>
 
-      <div class="project-swiper__swiper swiper">
-         <div class="project-swiper__swiper-wrapper swiper-wrapper">
-            <div class="project-swiper__slide swiper-slide">
+      <div class="project-gallery__swiper swiper">
+         <div class="project-gallery__swiper-wrapper swiper-wrapper">
+            <div class="project-gallery__slide swiper-slide">
                <img src="./img/jpg/image-3.jpg" alt="сад во дворе">
             </div>
-            <div class="project-swiper__slide swiper-slide">
+            <div class="project-gallery__slide swiper-slide">
                <img src="./img/jpg/image-6.jpg" alt="сад во дворе">
             </div>
-            <div class="project-swiper__slide swiper-slide">
+            <div class="project-gallery__slide swiper-slide">
                <img src="./img/jpg/image-5.jpg" alt="сад во дворе">
             </div>
-            <div class="project-swiper__slide swiper-slide">
+            <div class="project-gallery__slide swiper-slide">
                <img src="./img/jpg/image-3.jpg" alt="сад во дворе">
             </div>
-            <div class="project-swiper__slide swiper-slide">
+            <div class="project-gallery__slide swiper-slide">
                <img src="./img/jpg/image-6.jpg" alt="сад во дворе">
             </div>
-            <div class="project-swiper__slide swiper-slide">
+            <div class="project-gallery__slide swiper-slide">
                <img src="./img/jpg/image-5.jpg" alt="сад во дворе">
             </div>
-
          </div>
       </div>
 
-      <div class="project-swiper__pagination-bullets pagination-bullets"></div>
+      <div class="project-gallery__pagination-bullets pagination-bullets"></div>
 
 
    </div>
@@ -210,11 +207,101 @@
 
    </div>
 
+   <div id="modal-gallery" class="modal modal-gallery js-modal-hidden js-modal-close">
+   <div class="modal__container">
+      <div class="modal__body js-modal-stop-close">
 
-   <script defer src='./js/app.js?_v=20250225200317'></script>
 
-<script defer src='./js/swiper.js?_v=20250225200317'></script>
 
+         <div class="modal-gallery__header">
+            <div class="modal-gallery__title" data-da=".modal-gallery__footer,0,992">
+               Проект «Flora»
+            </div>
+
+            <button class="modal__close js-modal-close" type="button">
+               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.33301 1.521L14.6663 14.8543M1.33301 14.8543L14.6663 1.521" stroke="#181818" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+               </svg>
+            </button>
+         </div>
+
+         <div class="modal-gallery__body">
+
+            <div class="modal-gallery__swiper swiper">
+               <div class="modal-gallery__swiper-wrapper swiper-wrapper">
+                  <div class="modal-gallery__slide swiper-slide">
+                     <img src="./img/jpg/image-3.jpg" alt="сад во дворе">
+                  </div>
+                  <div class="modal-gallery__slide swiper-slide">
+                     <img src="./img/jpg/image-6.jpg" alt="сад во дворе">
+                  </div>
+                  <div class="modal-gallery__slide swiper-slide">
+                     <img src="./img/jpg/image-5.jpg" alt="сад во дворе">
+                  </div>
+                  <div class="modal-gallery__slide swiper-slide">
+                     <img src="./img/jpg/image-3.jpg" alt="сад во дворе">
+                  </div>
+                  <div class="modal-gallery__slide swiper-slide">
+                     <img src="./img/jpg/image-6.jpg" alt="сад во дворе">
+                  </div>
+                  <div class="modal-gallery__slide swiper-slide">
+                     <img src="./img/jpg/image-5.jpg" alt="сад во дворе">
+                  </div>
+               </div>
+            </div>
+
+         </div>
+
+
+         <div class="modal-gallery__footer">
+
+            <div class="modal-gallery__nav">
+               <div class="modal-gallery__pagination-fraction pagination-fraction"></div>
+               <div class="swiper-button__wrapper">
+                  <button class="swiper-button__item modal-gallery__button-prev" type="button" aria-label="листать назад">
+                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.7439 0.9225L8.6866 1.8825L3.2359 7.33315L19.3333 7.33315V8.66648L3.2359 8.66648L8.6866 14.1172L7.7439 15.0771L0.666599 7.99981L7.7439 0.9225Z" fill="#181818" />
+                     </svg>
+                  </button>
+                  <button class="swiper-button__item modal-gallery__button-next" type="button" aria-label="листать вперёд">
+                     <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.2561 15.0775L11.3134 14.1175L16.7641 8.66685H0.666748V7.33352H16.7641L11.3134 1.88285L12.2561 0.922852L19.3334 8.00019L12.2561 15.0775Z" fill="#181818" />
+                     </svg>
+                  </button>
+               </div>
+            </div>
+
+         </div>
+
+
+
+
+      </div>
+   </div>
+</div>
+   <div id="image-zoom" class="modal image-zoom js-modal-hidden js-modal-close js-modal-visible">
+   <div class="modal__container">
+      <div class="modal__body js-modal-stop-close">
+
+         <button class="modal__close js-modal-close" type="button">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M1.33301 1.521L14.6663 14.8543M1.33301 14.8543L14.6663 1.521" stroke="#181818" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+         </button>
+
+         <div class="image-zoom__body">
+            <img src="./img/png/project-2-1.png" alt="Схема двора">
+         </div>
+
+      </div>
+   </div>
+</div>
+
+   <script defer src='./js/app.js?_v=20250226140914'></script>
+
+<script defer src='./js/swiper.js?_v=20250226140914'></script>
+
+<script defer src='./js/mask.js?_v=20250226140914'></script>
 
 
 </body>

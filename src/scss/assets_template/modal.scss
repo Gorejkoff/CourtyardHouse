@@ -1,9 +1,9 @@
 .modal {
    --height-modal: 100vh;
    position: fixed;
-   top: var(--header-h);
+   top: 0;
    left: 0;
-   z-index: 19;
+   z-index: 30;
    width: 100vw;
    height: var(--height-modal);
    background-color: var(--color-modal-bg);
@@ -15,36 +15,120 @@
       --height-modal: 100dvh;
    }
 
-   @media (min-width:768px) {
-      top: 0;
-      --height-modal: 100vh;
+   // @media (min-width:768px) {
+   //    --height-modal: 100vh;
 
-      @supports(height: 100dvh) {
-         --height-modal: 100dvh
-      }
-   }
+   //    @supports(height: 100dvh) {
+   //       --height-modal: 100dvh
+   //    }
+   // }
 
    &__container {
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding: 0;
       min-height: var(--height-modal);
       display: flex;
       align-items: center;
+   }
 
-      @media (max-width:767.98px) {
-         padding: 0;
+   &__close {
+      position: absolute;
+      top: 24px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-smoky-white);
+      border-radius: 50%;
+
+      svg {
+         width: 13px;
+      }
+
+      @media (min-width:992px) {
+         top: 16px;
+         right: -72px;
+         width: 56px;
+         height: 56px;
+         background-color: var(--color-white);
+
+         svg {
+            width: 16px;
+         }
+      }
+   }
+
+   &__body {
+      padding: 16px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      min-height: var(--height-modal);
+      background-color: var(--color-white);
+      max-width: 680px;
+
+      @media (min-width:768px) {
+         padding: 40px;
+      }
+
+      @media (min-width:1024px) {
+         padding: 64px;
       }
    }
 
 
-   &__body {
-      position: relative;
-      margin: 0 auto;
-      width: 100%;
-      background-color: var(--color-white);
+   &__title {
+      margin-bottom: 24px;
+      font-weight: 500;
+      font-size: 26px;
+      line-height: 86%;
+      max-width: 280px;
 
+      @media (min-width:992px) {
+         margin-bottom: 32px;
+         font-size: 56px;
+         max-width: auto;
+      }
    }
+
+
+   &__form-block {
+      margin-bottom: 24px;
+      border: 1px solid var(--color-light-grey);
+      border-radius: 24px;
+      overflow: hidden;
+
+      @media (min-width:992px) {
+         margin-bottom: 16px;
+      }
+   }
+
+   &__text {
+      color: var(--color-black-05);
+      font-size: 12px;
+
+      @media (min-width:992px) {
+         font-size: 16px;
+      }
+   }
+
+   &__button-submit {
+      margin-top: 24px;
+      width: 100%;
+
+      @media (min-width:992px) {
+         margin-top: 32px;
+      }
+   }
+
+
+
 }
+
 
 
 .js-modal-hidden {
@@ -58,4 +142,68 @@
 
 .body-overflow {
    overflow: hidden;
+}
+
+.textarea,
+.input {
+   display: block;
+   padding: 20px 24px;
+   font-size: 16px;
+   line-height: 100%;
+   width: 100%;
+
+   @media (min-width:992px) {
+      font-size: 20px;
+   }
+
+   &:not(:last-child) {
+      border-bottom: 1px solid var(--color-light-grey);
+   }
+
+   &::placeholder {
+      color: var(--color-black-05);
+   }
+}
+
+.textarea {
+   resize: none;
+   height: 116px;
+}
+
+.checkbox-block {
+   display: flex;
+   gap: 8px;
+}
+
+.input-check {
+   display: none;
+
+   &:checked+.checkbox-item {
+      &::before {
+         display: block;
+      }
+   }
+}
+
+.checkbox-item {
+   position: relative;
+   display: block;
+   width: 24px;
+   min-width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   border: 1px solid var(--color-light-grey);
+
+   &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+      background-color: var(--color-black);
+      border-radius: 50%;
+      display: none;
+   }
 }

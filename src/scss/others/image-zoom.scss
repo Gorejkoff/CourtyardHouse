@@ -1,0 +1,12 @@
+.image-zoom {
+
+   &__body {}
+
+
+
+   .modal__body {
+      padding: 0;
+      max-width: none;
+      width: min-content;
+   }
+}

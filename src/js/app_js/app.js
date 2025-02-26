@@ -83,3 +83,10 @@ function closeHeaderMenu() {
    document.body.classList.remove('is-open-header-menu')
 }
 
+
+function imageZoom() {
+
+
+
+
+}

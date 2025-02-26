@@ -53,3 +53,4 @@ function initOpenModal(modalElement) {
       document.body.classList.add('body-overflow')
    }
 }
+

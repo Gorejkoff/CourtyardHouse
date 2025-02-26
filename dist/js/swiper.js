@@ -6223,10 +6223,6 @@ if (document.querySelector('.benefit__swiper')) {
             slidesPerView: 2.5,
          }
       },
-      // navigation: {
-      //    prevEl: ".main-gallery__button-prev",
-      //    nextEl: ".main-gallery__button-next",
-      // },
       pagination: {
          el: '.benefit__pagination',
          type: 'bullets',
@@ -6235,9 +6231,35 @@ if (document.querySelector('.benefit__swiper')) {
    });
 }
 
+let modalGallerySwiper;
 
-if (document.querySelector('.project-swiper__swiper')) {
-   const swiper = new Swiper('.project-swiper__swiper', {
+if (document.querySelector('.modal-gallery__swiper')) {
+   modalGallerySwiper = new Swiper('.modal-gallery__swiper', {
+      keyboard: {
+         enabled: true,
+         onlyInViewport: true,
+      },
+      // loop: true,
+      spaceBetween: 12,
+      speed: 300,
+      slidesPerView: 1,
+      // grabCursor: true,
+
+      navigation: {
+         prevEl: ".modal-gallery__button-prev",
+         nextEl: ".modal-gallery__button-next",
+      },
+      pagination: {
+         el: '.modal-gallery__pagination-fraction',
+         type: 'fraction',
+         clickable: true,
+      },
+   });
+}
+
+
+if (document.querySelector('.project-gallery__swiper')) {
+   const swiper = new Swiper('.project-gallery__swiper', {
       keyboard: {
          enabled: true,
          onlyInViewport: true,
@@ -6249,11 +6271,11 @@ if (document.querySelector('.project-swiper__swiper')) {
       grabCursor: true,
 
       navigation: {
-         prevEl: ".project-swiper__button-prev",
-         nextEl: ".project-swiper__button-next",
+         prevEl: ".project-gallery__button-prev",
+         nextEl: ".project-gallery__button-next",
       },
       pagination: {
-         el: '.project-swiper__pagination-bullets',
+         el: '.project-gallery__pagination-bullets',
          type: 'bullets',
          clickable: true,
       },
@@ -6262,7 +6284,7 @@ if (document.querySelector('.project-swiper__swiper')) {
          1024: {
             spaceBetween: 32,
             pagination: {
-               el: '.project-swiper__pagination-fraction',
+               el: '.project-gallery__pagination-fraction',
                type: 'fraction',
                clickable: true,
             },
@@ -6270,7 +6292,15 @@ if (document.querySelector('.project-swiper__swiper')) {
 
       },
    });
+   swiper.on('doubleClick', function () {
+      initOpenModal('modal-gallery');
+      modalGallerySwiper.slideTo(swiper.activeIndex)
+   });
 }
+
+
+
+
 
 
 /* создание и ликвидация состояния слайдера в зависимости от ширины вьюпорта */

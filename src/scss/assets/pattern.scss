@@ -320,3 +320,11 @@ body {
       min-height: 48px;
    }
 }
+
+.scroll-margin-top {
+   scroll-margin-top: var(--height-header, 84px);
+
+   @media (min-width:1024px) {
+      scroll-margin-top: var(--height-header, 160px);
+   }
+}

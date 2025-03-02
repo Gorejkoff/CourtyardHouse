@@ -23,6 +23,7 @@
    }
 
    &__slide {
+      overflow: hidden;
 
       img {
          height: 100%;
@@ -55,8 +56,9 @@
    }
 
    .swiper-wrapper {
+      width: 100%;
+
       .swiper-slide {
-         // flex-shrink: 1;
          width: auto;
       }
    }

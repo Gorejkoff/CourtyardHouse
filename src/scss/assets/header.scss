@@ -1,6 +1,10 @@
 @use '../assets/variablesSCSS.scss' as *;
 
 .header {
+   position: sticky;
+   top: 0;
+   background-color: var(--color-white);
+   z-index: 5;
 
    &__container {}
 

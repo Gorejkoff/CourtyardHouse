@@ -59,6 +59,7 @@ addHeightVariable();
 window.addEventListener('resize', () => {
    addHeightVariable();
    setWidthHeaderMenu();
+   closeHeaderMenu();
 })
 
 
@@ -71,6 +72,9 @@ document.documentElement.addEventListener("click", (event) => {
    }
    if (event.target.closest('.js-zoom-close') || (event.target.closest('.image-zoom') && !event.target.closest('.js-zoom-body'))) {
       removeImageZoom(event)
+   }
+   if (event.target.closest('#header-pop-up-inner a') && !MIN1024.matches) {
+      closeHeaderMenu()
    }
 })
 

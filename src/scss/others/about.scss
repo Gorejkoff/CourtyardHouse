@@ -6,7 +6,7 @@
    &__title {}
 
    &__border {
-      margin-top: 32px;
+      margin-top: 16px;
       border-bottom: 1px solid var(--color-gainsborough);
       border-top: 1px solid var(--color-gainsborough);
       overflow: hidden;
@@ -15,6 +15,7 @@
 
 
       @media (min-width:1024px) {
+         margin-top: 32px;
          border: 1px solid var(--color-gainsborough);
          background: url('../img/svg/about-bg.svg');
          background-repeat: no-repeat;
@@ -68,7 +69,6 @@
 
    &__content-text {
       font-size: 22px;
-      line-height: 106%;
 
       @media (min-width:1024px) {
          font-size: 32px;

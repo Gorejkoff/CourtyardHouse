@@ -1,12 +1,16 @@
 .main-gallery {
 
-   &__feader {
+   &__header {
       position: relative;
-      margin-bottom: 32px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       gap: 58px;
+
+      @media (min-width:1024px) {
+         margin-bottom: 32px;
+      }
    }
 
    &__text {

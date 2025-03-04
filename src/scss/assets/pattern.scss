@@ -306,7 +306,7 @@ body {
 }
 
 .button-transparent {
-   padding: 14px 24px;
+   padding: 8px 16px;
    display: inline-flex;
    align-items: center;
    justify-content: center;
@@ -316,6 +316,7 @@ body {
    border-radius: 40px;
 
    @media (min-width:768px) {
+      padding: 14px 24px;
       font-size: 16px;
       min-height: 48px;
    }
